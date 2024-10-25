@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <style>
+        /* Container styling */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Category buttons */
+        .cat {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .cat button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            background-color: #3877FF;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .cat button:hover {
+            background-color: #2857B8;
+        }
+
+        /* Product cards */
+        .cater {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .crd {
+            width: 250px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .crd:hover {
+            transform: translateY(-5px);
+        }
+
+        .crd img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .crdtext {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .crdtext h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .crdtext i {
+            color: gold;
+        }
+
+        .crdtext button {
+            padding: 10px 15px;
+            margin-top: 10px;
+            border: none;
+            background-color: #FF5722;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .crdtext button:hover {
+            background-color: #E64A19;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="cat">
+            
+        </div>
+        <div class="cater"></div>
+    </div>
+
+    <script>
+        let practicalData = []; 
+        let allProducts = []; 
+
+        
+        fetch('https://dummyjson.com/products')
+            .then(res => res.json())
+            .then(data => {
+                practicalData = data.products;
+                allProducts = data.products; 
+                showdata(practicalData);
+                ourcategory(data.products);
+            })
+            .catch(error => {
+                console.log("Error fetching product data:", error);
+            });
+
+        
+        const showdata = (products) => {
+            const caterContainer = document.querySelector(".cater");
+            caterContainer.innerHTML = ''; 
+            products.forEach((product) => {
+                const updatedElement = {
+                    id: product.id,
+                    title: product.title.replaceAll("'", "^^"),
+                    thumbnail: product.thumbnail.replaceAll("'", "^^"),
+                    price: product.price,
+                    description: product.description.replaceAll("'", "^^"),
+                    quantity: 1,
+                };
+                caterContainer.innerHTML += `
+                    <div class="crd">
+                        <img src="${product.thumbnail}" alt="">
+                        <div class="crdtext">
+                            <h2>${product.title}</h2>
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            <i class="fa-solid fa-star-half-stroke" aria-hidden="true"></i><br>
+                            <button id="buttonn" productData='${JSON.stringify(updatedElement)}' onclick="myFunction(this)">
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+        };
+
+        
+        const ourcategory = (products) => {
+            const categories = [...new Set(products.map(product => product.category))]; 
+            const catContainer = document.querySelector(".cat");
+            catContainer.innerHTML = `<button onclick="harsfilter('ALL')">ALL</button>`; 
+            categories.forEach(category => {
+                catContainer.innerHTML += `
+                    <button onclick="harsfilter('${category}')">${category}</button>
+                `;
+            });
+        };
+
+        
+        const harsfilter = (category) => {
+            if (category === 'ALL') {
+                practicalData = allProducts;
+            } else {
+                practicalData = allProducts.filter(product => product.category === category);
+            }
+            showdata(practicalData); 
+        };
+    </script>
+</body>
+
+</html>

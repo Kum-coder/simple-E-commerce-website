@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="cat">
+            <button onclick="harsfilter('ALL')">ALL</button>
+        </div>
+        <div class="cater"></div>
+    </div>
+    <script>
+        let practicalData;
+        fetch('https://dummyjson.com/products')
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                practicalData = data.products
+                const FragData = data.products.filter(e=>e.category);
+                console.log(practicalData);
+                showdata(practicalData);
+                ourcategory(FragData);
+
+            })
+
+            .catch(error => {
+                console.log("Error fetching product data:", error);
+            });
+        const showdata = (bello) => {
+            console.log(bello);
+            bello.forEach((element, i) => {
+                const updatedElement = {
+                    id: element.id,
+                    title: element.title.replaceAll("'", "^^"),
+                    thumbnail: element.thumbnail.replaceAll("'", "^^"),
+                    price: element.price,
+                    description: element.description.replaceAll("'", "^^"),
+                    quantity: 1,
+
+                }
+                document.querySelector(".cater").innerHTML += `       
+                <div class="crd">
+                <img src="${element.thumbnail}" alt="">
+                <div class="crdtext">
+                    <h2>
+                    ${element.title}
+                    </h2>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star-half-stroke" aria-hidden="true"></i><br>
+                   <button id="buttonn" productData='${JSON.stringify(updatedElement)}' onclick="myFunction(this) ">
+                            Add to cart
+                        </button>
+                </div>
+            </div>
+            `
+            })
+        }
+       const ourcategory = (bello)=>{
+            bello.forEach(element=>{
+                document.querySelector(".cat").innerHTML=`
+                <button onclick="harsfilter('${element}')">${element}</button>
+                
+              `
+            })
+        }
+        const harsfilter=(e)=>{
+            if(e!=='ALL'){
+                practicalData = practicalData.filter(element => element.category == e);
+
+
+            }
+            showdata(practicalData);
+
+        }
+        
+
+    </script>
+
+</body>
+
+</html>

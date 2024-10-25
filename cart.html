@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="hello.css">
+    <script src="https://kit.fontawesome.com/f30fac2c61.js" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran:wght@200&family=Courgette&family=Edu+TAS+Beginner:wght@700&family=Lato:wght@300;900&family=Mukta:wght@700&family=Mulish:wght@300&family=Open+Sans&family=PT+Sans:ital,wght@1,700&family=Poppins:wght@300&family=Raleway:wght@100&family=Roboto&family=Roboto+Condensed:wght@700&family=Roboto+Slab&display=swap"
+        rel="stylesheet">
+        
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <h1>Trends</h1>
+        </div>
+        <ul>
+            <li>
+                <a href="hellokumar.html" id="home" onclick="homes()">Home</a>
+                <a id="shop" onclick="shops()">Shop</a>
+                <a id="clog" onclick="blog()">blogs</a>
+                <a id="abouts" onclick="about()">About</a>
+                <a href="cart.html">cart</a>
+                <a id="contact" onclick="contacts()">Contact</a>
+                <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="cart-items"></div>
+</body>
+<script>
+    
+    let ab = localStorage.getItem("CartValue");
+    let praduct = JSON.parse(ab);
+    console.log(praduct);
+
+    
+    if (praduct && Array.isArray(praduct)) {
+        
+        let cartItemsDiv = document.getElementById('cart-items');
+
+        
+        praduct.forEach((element, index) => {
+            let itemDiv = document.createElement('div');
+            itemDiv.innerHTML = `
+                <div>
+                    <p>Product ID: ${element.id}</p>
+                <p>Title: ${element.title}</p>
+                <p>Price: ${element.price}</p>
+                <p>Quantity: ${element.quantity}</p>
+                
+                <button onclick="removeProduct(${index})">Remove</button>
+                    </div>
+                    <div> <img src="${element.thumbnail.replaceAll("^^", "'")}"></div>
+            `;
+            cartItemsDiv.appendChild(itemDiv);
+        });
+    } else {
+        console.log("No products found in the cart.");
+    }
+
+    
+    function removeProduct(index) {
+        praduct.splice(index, 1); 
+        localStorage.setItem("CartValue", JSON.stringify(praduct)); 
+        location.reload(); 
+    }
+</script>
+
+</html>

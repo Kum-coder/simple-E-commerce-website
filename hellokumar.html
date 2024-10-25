@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="hello.css">
+    <script src="https://kit.fontawesome.com/f30fac2c61.js" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran:wght@200&family=Courgette&family=Edu+TAS+Beginner:wght@700&family=Lato:wght@300;900&family=Mukta:wght@700&family=Mulish:wght@300&family=Open+Sans&family=PT+Sans:ital,wght@1,700&family=Poppins:wght@300&family=Raleway:wght@100&family=Roboto&family=Roboto+Condensed:wght@700&family=Roboto+Slab&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <h1>Trends</h1>
+            </div>
+            <ul>
+                <li>
+                    
+                    <a id="home" onclick="homes()">Home</a>
+                    <a id="shop" onclick="shops()">Shop</a>
+                    <a id="clog" onclick="blog()">blogs</a>
+                    <a id="abouts" onclick="about()">About</a>
+                    <a  href="cart.html">cart</a>
+                    <a id="contact" onclick="contacts()">Contact</a>
+                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                </li>
+            </ul>
+        </nav>
+        <div class="main">
+            <div class="maintext">
+                <h2>
+                    Trends
+                </h2>
+                <h1 class="top">
+                    Super Value Deals
+                </h1>
+                <h1>On All Products</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi</p>
+                <button>Explore</button>
+            </div>
+            <img src="m3.png" alt="">
+        </div>
+        <div class="trend">
+            <div class="head">
+                <h1>
+                    Trends <span>Men's wear</span>
+                </h1>
+            </div>
+            <div class="card fragCard">
+                
+            </div>
+        </div>
+        <div class="trend" id="trendsec">
+            <div class="head">
+                <h1>
+                    Trends <span>women's wear</span>
+                </h1>
+            </div>
+            <div class="card beautcard">
+                
+            </div>
+        </div>
+        <div class="about">
+            <div class="aboutus">
+                <h1>#Know Us</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="meta">
+                <img src="lap.png" alt="">
+                <div class="abouttext">
+                    <h1>Who we are ?</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing Dolorum corrupti consequuntur sunt ipsam
+                        aperiam vel magni sequi eos sit amet consectetur adipisicing Dolorum corrupti consequuntur sunt
+                        ipsam aperiam vel magni sequi eos atque nam maxime dolorem fuga, rem eum iure quidem! Illo
+                        corporis, asperiores ipsum excepturi voluptates necessitatibus consectetur odit omnis hic
+                        praesentium autem, officiis dignissimos assumenda saepe.</p>
+                </div>
+            </div>
+        </div>
+        <div class="contact">
+            <div class="contactus">
+                <h1>#Let's Connect</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="contactMe">
+
+                <div class="contactText">
+                    <h1>Visit Our Office or Contact<br>Us Today</h1>
+                    <p>Address : Dablin Park, England, New york.</p>
+                    <p>Contact : dumiemail@gmail.com</p>
+                    <p>Number : 999999000011</p>
+                </div>
+                <img src="map.PNG" alt="">
+            </div>
+            <div class="form">
+                <h1>
+                    Connect with Us. Fill Form
+                </h1>
+                <input type="text" placeholder="Enter Email"> <br>
+                <input type="text" placeholder="Enter Email"> <br>
+                <input type="text" placeholder="Enter Email"> <br>
+                <input type="text" placeholder="Enter Email"> <br>
+                <input type="text" placeholder="Enter Email"> <br>
+                <button>Submit</button>
+            </div>
+        </div>
+        <div class="cart">
+            <img id="newImg" src="" alt="">
+            <div class="carttext">
+                <h1>
+                    Trends Offer : Trending Shop<br>Now
+                </h1>
+                <h2>Special Price</h2>
+                <h2>$11</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+                <div class="btn">
+                    <button>Buy Now</button>
+                    <button onclick="addCart()">Add to Cart</button>
+                </div>
+                <button  class="back">Back</button>
+            </div>
+        </div>
+        <div class="trends">
+            <div class="head">
+                <h1>
+                    Trends <span>women's wear</span>
+                </h1>
+            </div>
+            <div class="card">
+                <div class="blog">
+                    <img src="queendress.webp" alt="">
+                    <div class="blogtext">
+                        <h2> lady's top</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi</p>
+                        <a
+                            href="https://www.google.com/search?sca_esv=fa70f7cd442e3964&sca_upv=1&rlz=1C1UEAD_en&sxsrf=ADLYWILg4a-gry6S9RXY11kUfGMnxJdocA:1722317464679&q=womens+top+dress&udm=2&fbs=AEQNm0BJU8HQC3fzNpLzBMuBiMvVRr8BSz33Xp3ghdPGS7xtz4DkKjUwhIZpLqvxYvXFn9vUbxaHayUNqeV8H65C6InRL58TaRIgLWzQD5SxGotCxotPNQAUPXOMJuUV3F-7mbgk8WYbOGelu6b6i3SdgKxXePmzr4aFTaViGgMugpefcc9r5uQoGYlgnUcptcYVjVSVhW9XjqNlH7PQQ5bmcN12WR3RYQ&sa=X&ved=2ahUKEwjRu7DFhM6HAxXMzjgGHYs4KMUQtKgLegQIGBAB&biw=1536&bih=695&dpr=1.25">Read
+                            more</a>
+                    </div>
+                </div>
+                <div class="blog">
+                    <img src="cutboyz.webp" alt="">
+                    <div class="blogtext">
+                        <h2> boy's top</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi</p>
+                        <a
+                            href="https://www.google.com/search?q=mens+top+dress&sca_esv=fa70f7cd442e3964&sca_upv=1&rlz=1C1UEAD_en&udm=2&biw=1536&bih=695&sxsrf=ADLYWIId8lUTphykdfu1PAcCXtLNnRAQiQ%3A1722317469270&ei=nXqoZrqeEOn1juMPrtiu0Ag&ved=0ahUKEwj64MjHhM6HAxXpumMGHS6sC4oQ4dUDCBE&oq=mens+top+dress&gs_lp=Egxnd3Mtd2l6LXNlcnAiDm1lbnMgdG9wIGRyZXNzMgYQABgIGB4yBhAAGAgYHjIGEAAYCBgeMgYQABgIGB4yBhAAGAgYHjIJEAAYgAQYGBgKSOQWUPMDWMcFcAF4AJABAJgB8AKgAc8EqgEFMi0xLjG4AQzIAQD4AQGYAgKgAv8CwgIEECMYJ5gDAIgGAZIHBTEuMy0xoAfJBA&sclient=gws-wiz-serp">Read
+                            more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="letter">
+            <div class="lettertext">
+                <h1>Sign Up For Newsletter</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="inp">
+                <input type="text" placeholder="Enter Email">
+                <button>Sign Up</button>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footertext">
+                <h2>TRENDS</h2>
+                <p>Service</p>
+                <p>Customer</p>
+                <p>Satisfaction</p>
+                <p></p>
+            </div>
+            <div class="footertext">
+                <h2>About Us</h2>
+                <p>Adrress : Lorem ipsum dolor sit amet, <br>
+                    consectetur adipisicing <br>
+                    Perferendis, excepturi alias</p>
+                <p>Service</p>
+                <p>Customer</p>
+                <p>Satisfaction</p>
+            </div>
+            <div class="footertext">
+                <h2>Contec</h2>
+                <p>9989003229</p>
+                <p>Customer</p>
+                <p>Coming Up</p>
+                <p>New Arrival</p>
+            </div>
+            <div class="footertext">
+                <h2>Trending</h2>
+                <p>Service</p>
+                <p>Customer</p>
+                <p>Shop</p>
+                <p></p>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- <script src="hello.js"></script> -->
+   
+    
+    <!-- <script>
+        function displayCartItems() {
+            // Retrieve cart from localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+            // Reference to the cart container
+            const cartContainer = document.querySelector(".cart .carttext");
+    
+            // Clear any existing content
+            cartContainer.innerHTML = "";
+    
+            // Check if cart is empty
+            if (cart.length === 0) {
+                cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+                return;
+            }
+    
+            // Loop through cart items and create HTML content
+            cart.forEach((item, index) => {
+                cartContainer.innerHTML += `
+                    <div class="cart-item">
+                        <h2>${item.title}</h2>
+                        <p>ID: ${item.id}</p>
+                        <p>Description: ${item.description}</p>
+                        <button onclick="removeFromCart(${index})">Remove</button>
+                    </div>
+                    <hr>
+                `;
+            });
+        }
+    
+        // Function to remove an item from the cart
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1); // Remove item at the specified index
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCartItems(); // Refresh the cart display
+        }
+    
+        // Call the function to display items when the cart page loads
+        displayCartItems();
+    </script> -->
+    
+
+</body>
+<script src="hello.js"></script>
+<script>
+        
+    let FragData=[];
+    let beautc=[];
+    fetch('https://dummyjson.com/products')
+.then(response => response.json())
+.then(data => {
+    console.log(data);
+    data.products.map(e => {
+        if(e.category=="fragrances"){
+            FragData.push(e)
+        }
+        else if(e.category=="beauty"){
+            beautc.push(e)
+        }
+    });
+    console.log(FragData);
+    console.log(beautc);
+    FragData.forEach((element, i) => {
+        let product = JSON.stringify(element);
+        console.log("Product JSON string:", product);  // Log to check validity
+        if(i < 3) {
+           const updatedElement = {
+                        id: element.id,
+                        title: element.title.replaceAll("'", "^^"),
+                        thumbnail: element.thumbnail.replaceAll("'", "^^"),
+                        price: element.price,
+                        description: element.description.replaceAll("'", "^^"),
+                        quantity:1,
+
+                    };
+            document.querySelector(".fragCard").innerHTML += `
+                <div class="crd">
+                    <img src="${element.thumbnail}" alt="">
+                    <div class="crdtext">
+                        <h2>${element.title}</h2>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star-half-stroke" aria-hidden="true"></i><br>
+                      <button id="buttonn" productData='${JSON.stringify(updatedElement)}' onclick="myFunction(this) ">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+    });
+    beautc.forEach((element,i) => {
+                let product =JSON.stringify(element)
+                console.log("Product JSON string:", product);
+                if(i<3){
+                    const updatedElement = {
+                        id: element.id,
+                        title: element.title.replaceAll("'", "^^"),
+                        thumbnail: element.thumbnail.replaceAll("'", "^^"),
+                        price: element.price,
+                        description: element.description.replaceAll("'", "^^"),
+                        quantity:1,
+
+                    };
+                document.querySelector(".beautcard").innerHTML += `       
+                <div class="crd">
+                <img src="${element.thumbnail}" alt="">
+                <div class="crdtext">
+                    <h2>
+                    ${element.title}
+                    </h2>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star-half-stroke" aria-hidden="true"></i><br>
+                   <button id="buttonn" productData='${JSON.stringify(updatedElement)}' onclick="myFunction(this) ">
+                            Add to cart
+                        </button>
+                </div>
+            </div>
+                `
+                }
+               
+            });
+
+            
+})
+.catch(error => {
+    console.log("Error fetching product data:", error);
+});
+
+
+
+
+function myFunction(e) {
+    
+    let ob = localStorage.getItem("CartValue");
+    
+    
+    let cartData = [];
+
+    
+    let v = e.getAttribute("productData");
+    let newProduct = JSON.parse(v);
+
+    console.log(newProduct); 
+
+    
+    if (ob) {
+        
+        cartData = JSON.parse(ob);
+        
+        
+        let itemFound = false;
+        
+        cartData.forEach(item => {
+            if (item.id === newProduct.id) {
+            
+                item.quantity += 1;
+                itemFound = true;
+            }
+        });
+
+        
+        if (!itemFound) {
+            cartData.push(newProduct);
+        }
+    } else {
+        
+        cartData.push(newProduct);
+    }
+
+    
+    localStorage.setItem("CartValue", JSON.stringify(cartData));
+}
+
+            
+
+
+
+</script>
+
+</html>
